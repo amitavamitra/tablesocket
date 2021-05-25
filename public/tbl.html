@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+    integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+    crossorigin="anonymous"
+  />
+  <!-- -- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css" />
+
+
+</head>
+<body>
+    <table id="choose-address-table" class="ui-widget ui-widget-content">
+        <thead>
+            <tr class="ui-widget-header ">
+                <th>Name/Nr.</th>
+                <th>Street</th>
+                <th>Town</th>
+                <th>Postcode</th>
+                <th>Country</th>
+                <th>Options</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="nr"><span>50</span>
+                </td>
+                <td>Some Street 1</td>
+                <td>Leeds</td>
+                <td>L0 0XX</td>
+                <td>United Kingdom</td>
+                <td>
+                    <button type="button" class="use-address" />
+                </td>
+            </tr>
+            <tr>
+                <td class="nr">49</td>
+                <td>Some Street 2</td>
+                <td>Lancaster</td>
+                <td>L0 0XX</td>
+                <td>United Kingdom</td>
+                <td>
+
+                    <input type="button" value="Click"  class="use-address">
+                    <!-- <button type="button" value="ABCCCC"  class="use-address" /> -->
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.2/qs.min.js"
+    integrity="sha256-TDxXjkAUay70ae/QJBEpGKkpVslXaHHayklIVglFRT4="
+    crossorigin="anonymous"
+  ></script>
+  <!-- access to the front end library of socket so that from main.js we can access it  -->
+  <script src="/socket.io/socket.io.js"></script>
+  <!-- <script src="js/click.js"></script> -->
+
+  <script>
+$(".use-address").click(function() {
+   $(this).closest('tr').find('td').each(function() {
+        var textval = $(this).text(); // this will be the text of each <td>
+        console.log(textval);
+   });
+});
+
+  </script>
+
+
+</body>
+</html>

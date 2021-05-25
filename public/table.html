@@ -1,0 +1,115 @@
+
+<html>
+    <head>
+        <title>Find table cell value on cell (table) click using JavaScript</title>
+    </head>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+      integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+      crossorigin="anonymous"
+    />
+    <!-- -- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css" />
+
+
+    <body>
+        <center>
+            Click on below table cell to find its value.
+            <input type="text"  id="clickedcell">
+            <input type="text" name="itscontent" id="itscontent">
+        </center>
+        <table contenteditable='true'
+          class="tab" align="center" id="tblMain" border="1" style="cursor: pointer;">
+          <tbody>
+
+          
+            <tr>
+                <td>
+                    R1C1
+                </td>
+                <td>
+                    R1C2
+                </td>
+                <td>
+                    R1C3
+                </td>
+                <td>
+                    R1C4
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    R2C1
+                </td>
+                <td>
+                    R2C2
+                </td>
+                <td>
+                    R2C3
+                </td>
+                <td>
+                    R2C4
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    R3C1
+                </td>
+                <td>
+                    R3C2
+                </td>
+                <td>
+                    R3C3
+                </td>
+                <td>
+                    R3C4
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    R4C1
+                </td>
+                <td>
+                    R4C2
+                </td>
+                <td>
+                    R4C3
+                </td>
+                <td>
+                    R4C4
+                </td>
+            </tr>
+        </tbody>
+        </table>
+        <br />
+        <script>
+            // var tbl = document.getElementById("tblMain");
+            // if (tbl != null) {
+            //     for (var i = 0; i < tbl.rows.length; i++) {
+            //         for (var j = 0; j < tbl.rows[i].cells.length; j++)
+            //             tbl.rows[i].cells[j].onclick = function () { getval(this); };
+            //     }
+            // }
+            // function getval(cel) {
+            //     cel.innerHTML;
+            // }
+        </script>
+
+<script
+      src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.2/qs.min.js"
+      integrity="sha256-TDxXjkAUay70ae/QJBEpGKkpVslXaHHayklIVglFRT4="
+      crossorigin="anonymous"
+    ></script>
+    <!-- access to the front end library of socket so that from main.js we can access it  -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/click.js"></script>
+
+
+
+    </body>
+    </html>

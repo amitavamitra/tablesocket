@@ -1,0 +1,206 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+      integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+      crossorigin="anonymous"
+    />
+    <!-- -- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css" />
+
+    <title>Process Collaboration App</title>
+
+
+    <title>Document</title>
+</head>
+<body>
+
+ <header class="chat-header">
+        <h1><i class="fas fa-compress-arrows-alt"></i> ProcessCollab</h1>
+        <a id="leave-btn" class="btn">Leave Room</a>
+      </header>
+      <main class="chat-main">
+        <div class="chat-sidebar">
+          <h3><i class="fas fa-comments"></i> Room Name:</h3>
+          <h2 id="room-name"></h2>
+          <h3><i class="fas fa-users"></i> Users</h3>
+          <ul id="users"></ul>
+          <h4></h4>
+          <p id="username"><p>
+        </div>
+      
+    <form   id="mat-form" >
+
+      <div class="form-row">
+        <div class="form-group col-md-2">
+          <label for="matnr">Material</label>
+        </div>
+        <div class="form-group col-md-6">
+          <input type="text" name="matnr" class="form-control" id="matnr"  placeholder="MAT-00001"> 
+        </div>
+        <div class="form-group col-md-4">
+            <label class="form-control" id="matnr_user" ></label>
+        </div>    
+      </div>
+
+
+      <div class="form-row">
+            <div class="form-group col-md-2">
+              <label for="matkx">Description</label>
+            </div>
+            <div class="form-group col-md-6">
+              <input type="text" name="matkx" class="form-control" id="matkx"  placeholder="Product Description"> 
+            </div>
+            <div class="form-group col-md-4">
+                <label class="form-control" id="matkx_user" ></label>
+            </div>    
+      </div>
+
+      <div class="form-row">
+            <div class="form-group col-md-2">
+              <label for="mbrsh">Industry</label>
+            </div>
+            <div class="form-group col-md-6">
+              <select     name="mbrsh" id="mbrsh">
+                <option value="#">Select...</option>
+                <option value="M">Mechanical</option>
+                <option value="R">Retail</option>
+                <option value="P">Pharma</option>
+                
+              </select>
+              <!-- <input type="text"  name="mbrsh"  class="form-control" id="mbrsh"  placeholder="Industry"> -->
+            </div>
+            <div class="form-group col-md-4">
+               <label class="form-control"  id="mbrsh_user" ></label>
+            </div>
+      </div>
+
+      <div class="form-row">
+            <div class="form-group col-md-2">
+              <label for="matkl">Material Group</label>
+            </div>
+            <div class="form-group col-md-6">
+              <select     name="matkl" id="matkl">
+                <option value="#">Select...</option>
+                <option value="0010">0010-Disk Memory</option>
+                <option value="0020">0020-Motherboard</option>
+                <option value="0030">0030-Processor</option>
+                <option value="0040">0040-Laptop-Notebook</option>
+              </select>
+            </div>
+            <div class="form-group col-md-4">
+                <label class="form-control"  id="matkl_user" ></label>
+            </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-2">
+          <label for="matyp">Material Type</label>
+        </div>
+        <div class="form-group col-md-6">
+          <select     name="matyp" id="matyp">
+            <option value="#">Select...</option>
+            <option value="FERT">FERT-Finished Goods</option>
+            <option value="HALB">HALB-Semi Finished Goods</option>
+            <option value="ROH">ROH-Raw Materials</option>
+          </select>
+        </div>
+        <div class="form-group col-md-4">
+       
+          <label class="form-control"  id="matyp_user" ></label>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-2">
+          <label for="meins">Base Unit of Measure</label>
+        </div>
+        <div class="form-group col-md-6">
+          <select   name="meins" id="meins">
+            <option value="#">Select...</option>
+            <option value="EA">EA- Each</option>
+            <option value="CS">CS-Case</option>
+            <option value="KG">KG-KiloGram</option>
+          </select>
+        </div>
+        <div class="form-group col-md-4">
+           <label class="form-control"  id="meins_user" ></label>
+        </div>
+      </div>
+      <div class="form-group col-md-12">
+        <button type="submit" <i class="fas fa-paper-plane btn-lg btn-primary"></i>Emit</button>
+      </div>
+      <br>
+      <div class="form-group col-md-2">
+        <label for="freeze" class="form-control"  id="freeze_user" >Agree and Freeze</label>
+      </div>
+      
+      <div class="form-group col-md-2">
+        <i class="fas fa-thumbs-up"></i>
+       
+      <input type="checkbox" name="freeze" id="freeze" onclick="enableDisableAll(this);"  >
+      </div>
+    </div>
+      
+
+        </form>
+          <button type="submit">Send2S4</button>
+        <form action="/s4" method="post"></form>
+
+      <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.2/qs.min.js"
+      integrity="sha256-TDxXjkAUay70ae/QJBEpGKkpVslXaHHayklIVglFRT4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/mat.js"></script>
+
+    <script>
+      function enableDisableAll(e) {
+        var own = e;
+        var form = document.getElementById("mat-form");
+        var elements = form.elements;
+
+    for (var i = 0 ; i < elements.length ; i++) {
+          if(own !== elements[i] ){
+          
+            if(own.checked == true){
+              
+              elements[i].disabled = true;  
+             
+            }else{
+            
+              elements[i].disabled = false;  
+            }
+          
+           }
+
+     }
+    
+}
+
+function clearAll(){
+ document.getElementById("mat-form").reset();
+}
+    </script>
+
+<script
+src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.2/qs.min.js"
+integrity="sha256-TDxXjkAUay70ae/QJBEpGKkpVslXaHHayklIVglFRT4="
+crossorigin="anonymous"
+></script>
+<!-- access to the front end library of socket so that from main.js we can access it  -->
+<script src="/socket.io/socket.io.js"></script>
+<script src="ick.js"></script>
+
+
+
+
+</body>
+</html>
