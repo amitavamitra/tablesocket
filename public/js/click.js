@@ -89,7 +89,7 @@ tab.addEventListener('click',function(){
                         }
     }
     function getval(cel) {
-      tblCell = [];
+    tblCell = [];
     cellClicked = cel.parentNode.rowIndex;
     colClicked  = cel.cellIndex;
     tblCell.push(cellClicked);
@@ -113,7 +113,6 @@ tab.addEventListener('click',function(){
 socket.emit('clicked' , tblCell);
 
 })
-
 // Find which cell was clicked and its text..
 // Lets emit this value and
 //  the question is getting it back via socket.on..
@@ -285,12 +284,12 @@ function outputUsers(users) {
 }
 
 //Prompt the user before leave chat room
-document.getElementById('leave-btn').addEventListener('click', () => {
-  const leaveRoom = confirm('Are you sure you want to leave the chatroom?');
-      if (leaveRoom) {
-        window.location = '../index.html';
-      } 
-});
+// document.getElementById('leave-btn').addEventListener('click', () => {
+//   const leaveRoom = confirm('Are you sure you want to leave the chatroom?');
+//       if (leaveRoom) {
+//         window.location = '../index.html';
+//       } 
+// });
 
 // Add the table for components
 // createTable
@@ -313,3 +312,12 @@ function createTable() {
     var div = document.getElementById('cont');
     div.appendChild(empTable);  // add the TABLE to the container.
 }
+
+
+// KeyUp
+
+// document.querySelector(".start").click(function(){
+//   document.querySelector(this).closest('tr').querySelector("input").each(function() {
+// console.log(this.value)
+// });
+// });

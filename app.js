@@ -10,7 +10,7 @@ io.on('connection', function(socket){
 
     socket.on('clicked', function(data){
         io.sockets.emit('clicked',data)
-        console.log(typeof(data));
+        console.log(data);
         // var rc = data.substr(0, 1);
         // console.log(rc)
         
@@ -26,6 +26,7 @@ io.on('connection', function(socket){
 
     socket.on('td', function(data){
         io.sockets.emit('td',data)
+        console.log('cell data',data);
     });
   
 })

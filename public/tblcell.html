@@ -34,11 +34,11 @@
         <tbody>  
             <tr>
               <td><input type='button'  class='AddNew' value='Add new item'></td>
-                <td><input type='text'></td>
-                <td><input type='text'></td>
-                <td><input type='text'></td>
-                <td><input type='text'></td>
-                <td><input type='text'></td>
+                <td><input type="text"  class="start"></td>
+                <td><input type="text"  class="start"></td>
+                <td><input type="text"  class="start"></td>
+                <td><input type="text"  class="start"></td>
+                <td><input type="text"  class="start"></td>
                
                 </tr>
          </tbody>
@@ -69,6 +69,15 @@ $(document).ready(function () {
 $('table').on('click', '.RemoveRow', function(){
   $(this).closest('tr').remove();
 });
+
+
+$(".start").keyup(function(){
+            $(this).closest('tr').find("input").each(function() {
+        console.log(this.value)
+        });
+    });  
+
+
 
 });
    </script>
